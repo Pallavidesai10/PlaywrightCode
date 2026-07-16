@@ -12,7 +12,7 @@ test('single file download', async({page})=>{
         page.getByRole('link', {name: 'Designer.png'}).click()
     ]);
 
-    //during the download, make sure there is no during downloading process
+    //during the download, make sure there is no failure during downloading process
     expect(await fileDownload.failure()).toBeNull();
 
     //get the file name
