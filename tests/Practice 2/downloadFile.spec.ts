@@ -7,7 +7,7 @@ test('download single file', async({page})=>{
 
     let [fileDownload]= await Promise.all([
         page.waitForEvent('download'),
-        page.getByRole('link', {name: 'sample text.txt'}).click()
+        page.getByRole('link', {name: 'test-upload.txt'}).click()
     ]);
 
     //during the download, make sure there is no failure during downloading process
@@ -18,4 +18,4 @@ test('download single file', async({page})=>{
     fileDownload.saveAs(filePath);
 
 
-})
+});
