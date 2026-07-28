@@ -11,7 +11,7 @@ test('dynamic web table- get CPU load', async({page})=>{
 
     let cpuLoad= ''
     for( let row of tableRows){
-        let Name= await row.locator('td').nth(0).isVisible();
+        //let Name= await row.locator('td').nth(0).isVisible();
         let processName= await row.locator('td').nth(0).innerText();
 
         if(processName=== 'Chrome'){

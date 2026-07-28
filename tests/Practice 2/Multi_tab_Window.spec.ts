@@ -34,7 +34,7 @@ test('handle one child page', async({browser})=>{
         page.getByRole('link', {name: 'About Us'}).click()
     ]);
 
-    childPages.waitForLoadState();
+    await childPages.waitForLoadState();
 
     await childPages.bringToFront();
     expect(childPages).toHaveTitle('Get to Know Us |  Innovating HR Solutions | OrangeHRM');

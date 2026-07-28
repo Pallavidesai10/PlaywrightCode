@@ -35,14 +35,14 @@ test('select multiple options from dropdown', async({page})=>{
 
 test('multi value', async({page})=>{
     await page.goto('https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/');
-    await page.getByRole('textbox', {name:'Select'}).selectOption(['choice 1', 'choice 2', 'choice 2 1']);
+    await page.getByRole('textbox', {name:'Select'}).first().selectOption(['choice 1', 'choice 2', 'choice 2 1']);
     await page.pause();
 
 
 })
 
 
-
+//without select tag
 test('scrolling dropdown', async({page})=>{
 
     await page.goto('https://testautomationpractice.blogspot.com/');
@@ -51,7 +51,4 @@ test('scrolling dropdown', async({page})=>{
     await page.getByText('Item 6', {exact: true}).click();
 
     await page.pause();
-
-
-
 });

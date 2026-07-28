@@ -56,7 +56,7 @@ test('keyboard enter key handing', async({page})=>{
 
     await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=account/login');
     let searchBox= page.getByPlaceholder('Search');
-    searchBox.fill('playwright');
+    await searchBox.fill('playwright');
     await page.waitForTimeout(2000);
 
     await searchBox.press('Enter');
@@ -97,12 +97,12 @@ test('keyboard copy paste test', async({page})=>{
     //Meta+A
     //ControlOrMeta+A
 
-    await firstName.press('ControlOrMeta+A');
-    await firstName.press('ControlOrMeta+C');
+    await firstName.press('ControlOrMeta+A');//select all
+    await firstName.press('ControlOrMeta+C');// copy
 
     let lastName= page.getByRole('textbox', { name: 'Last Name' });
 
-    await lastName.press('ControlOrMeta+V');
+    await lastName.press('ControlOrMeta+V');//paste
 
     await page.waitForTimeout(3000);
 

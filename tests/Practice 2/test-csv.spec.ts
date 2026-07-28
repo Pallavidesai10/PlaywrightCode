@@ -6,6 +6,15 @@ import fs from 'fs'
 
 //install csv parse module- npm install csv-parse
 
+/*fs- It gives your code access to the computer's storage so you can create, read, update, or delete files and directories.
+
+  readFileSync- By default, readFileSync reads files as raw binary data (a Buffer object looking like <Buffer ... 20 4d 79>).
+
+  utf- Telling Node.js to use 'utf-8' automatically converts those raw bytes into a standard JavaScript string (letters, numbers, and symbols)
+  so you can work with your CSV data directly as text.
+*/
+
+
 const csvPath= 'tests/Practice 2/testData/loginData.csv';
 const csvFileData= fs.readFileSync(csvPath, 'utf-8');
 const Records:any= parse(csvFileData,{columns: true, skip_empty_lines: true, trim: true});
