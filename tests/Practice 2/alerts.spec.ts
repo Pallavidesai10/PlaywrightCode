@@ -11,13 +11,13 @@ test('handle alerts', async({page})=>{
 
     page.on('dialog', async(popup)=>{
         if(popup.type()==='confirm'){
-            popup.dismiss();
+            await popup.dismiss();
         }
     });
 
     page.on('dialog', async(popup)=>{
         if(popup.type()==='prompt'){
-            popup.accept('pop up handled with playwright');
+            await popup.accept('pop up handled with playwright');
         }
     });
 
@@ -28,7 +28,6 @@ test('handle alerts', async({page})=>{
     await page.getByRole('button',{name: 'Prompt Alert'}).click();
 
     await page.pause();
-
 
   
 });

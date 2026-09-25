@@ -49,7 +49,7 @@ test('file upload without type=file attribute', async({page})=>{
     await FileUpload.setFiles("C:/Users/Ram/Downloads/saucelabsstate.spec.ts")
 });
 
-test.skip('multiple files upload without input type=file', async({page})=>{
+test('multiple files upload without input type=file', async({page})=>{
     await page.goto('https://naveenautomationlabs.com/opencart/ui/file-upload.html');
 
     let[multiFileUpload]= await Promise.all([

@@ -5,7 +5,7 @@ import{test, Page, Browser, expect, chromium, Locator}from'@playwright/test'
 test('launch two seperate pages', async()=>{
     let browser= await chromium.launch();
     let context= await browser.newContext();
-
+  
     let page2= await context.newPage();
     let page1= await context.newPage();
 

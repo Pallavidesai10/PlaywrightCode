@@ -2,7 +2,7 @@
 import{test, Page}from'@playwright/test'
 
 
-test('date picker 1', async({page})=>{
+test('date picker 1- calendar view', async({page})=>{
 
     await page.goto('https://testautomationpractice.blogspot.com/');
      await page.locator('[id="datepicker"]').click();
@@ -36,7 +36,7 @@ test('date picker 1', async({page})=>{
 });
 
 
-test('date picker 2', async({page})=>{
+test('date picker 2- dropdown', async({page})=>{
     await page.goto('https://testautomationpractice.blogspot.com/');
     await page.locator('[id="txtDate"]').click();
 
@@ -54,7 +54,7 @@ test('date picker 2', async({page})=>{
         }
 
         else{
-            await page.getByRole('combobox', {name: 'Select month'}).selectOption({label:'Nov'});
+            await page.getByRole('combobox', {name: 'Select month'}).selectOption({label:'Jul'});
             await page.getByRole('combobox',{name: 'Select year'}).selectOption('2026');
             await page.getByRole('link', {name: '8', exact: true}).click();
         }

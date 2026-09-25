@@ -13,10 +13,11 @@ import {firefox, test}from'@playwright/test'
 // }) ();
 
 
-test('launch brower', async({browser})=>{
+test('launch browser', async({browser})=>{
     //let browser:Browser= await firefox.launch({channel: 'firefox', headless: false});
     let page:Page= await browser.newPage();
     await page.goto('https://testautomationpractice.blogspot.com/');
+    await page.close();
     await browser.close();
 
 });
